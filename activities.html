@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Activities — Rotaract Club of Ntinda</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="home.html" class="brand">
+      <svg class="brand-mark" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <g fill="#00A29D">
+          <polygon points="37.9,22.3 41.9,21.8 41.9,26.2 37.9,25.7" />
+          <polygon points="36.2,30.8 39.7,32.7 37.2,36.3 34.2,33.5" />
+          <polygon points="29.9,36.7 31.6,40.3 27.4,41.7 26.7,37.7" />
+          <polygon points="21.3,37.7 20.6,41.7 16.4,40.3 18.1,36.7" />
+          <polygon points="13.8,33.5 10.8,36.3 8.3,32.7 11.8,30.8" />
+          <polygon points="10.1,25.7 6.1,26.2 6.1,21.8 10.1,22.3" />
+          <polygon points="11.8,17.2 8.3,15.3 10.8,11.7 13.8,14.5" />
+          <polygon points="18.1,11.3 16.4,7.7 20.6,6.3 21.3,10.3" />
+          <polygon points="26.7,10.3 27.4,6.3 31.6,7.7 29.9,11.3" />
+          <polygon points="34.2,14.5 37.2,11.7 39.7,15.3 36.2,17.2" />
+        </g>
+        <circle cx="24" cy="24" r="13.5" fill="#00A29D"/>
+        <circle cx="24" cy="24" r="13.5" fill="none" stroke="#012531" stroke-width="0.75"/>
+        <circle cx="24" cy="24" r="5" fill="#FAFDFD"/>
+        <path d="M24 10.5v27M10.5 24h27" stroke="#012531" stroke-width="0.6" opacity="0.35"/>
+        <circle cx="35" cy="35" r="6.5" fill="#D31A68" stroke="#012531" stroke-width="0.75"/>
+      </svg>
+      <span class="brand-text">
+        <strong>Rotaract Ntinda</strong>
+        <span>Fellowship · Service · Leadership</span>
+      </span>
+    </a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false"><span></span></button>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="members.html">Members</a></li>
+        <li><a href="activities.html">Activities</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="page-header">
+  <div class="container">
+    <span class="eyebrow" style="color:var(--pink-400);">Service in action</span>
+    <h1>Club activities &amp; projects</h1>
+    <p>A running record of what the club has organised — community service, fellowship, fundraising, and professional development.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="toolbar">
+      <div class="chip-filters" id="categoryFilters">
+        <button class="chip active" data-filter="All">All</button>
+        <button class="chip" data-filter="Community Service">Community Service</button>
+        <button class="chip" data-filter="Fellowship">Fellowship</button>
+        <button class="chip" data-filter="Fundraising">Fundraising</button>
+        <button class="chip" data-filter="International Service">International</button>
+        <button class="chip" data-filter="Professional Development">Prof. Development</button>
+      </div>
+      <button class="btn btn-primary" data-open-modal="addActivityModal">+ Add activity</button>
+    </div>
+
+    <div class="card-grid" id="activitiesGrid"></div>
+  </div>
+</section>
+
+<!-- ============ ADD ACTIVITY MODAL ============ -->
+<div class="modal-overlay" id="addActivityModal">
+  <div class="modal">
+    <div class="modal-head">
+      <h3 class="mt-0">Add an activity</h3>
+      <button class="modal-close" data-close-modal aria-label="Close">✕</button>
+    </div>
+    <form id="activityForm">
+      <div class="field-group">
+        <label for="aTitle">Title</label>
+        <input class="field" type="text" id="aTitle" required placeholder="e.g. Blood Donation Drive">
+      </div>
+      <div class="field-row">
+        <div class="field-group">
+          <label for="aDate">Date</label>
+          <input class="field" type="date" id="aDate" required>
+        </div>
+        <div class="field-group">
+          <label for="aCategory">Category</label>
+          <select class="field" id="aCategory">
+            <option>Community Service</option>
+            <option>Fellowship</option>
+            <option>Fundraising</option>
+            <option>International Service</option>
+            <option>Professional Development</option>
+          </select>
+        </div>
+      </div>
+      <div class="field-group">
+        <label for="aDescription">Description</label>
+        <textarea class="field" id="aDescription" rows="4" placeholder="What did the club do, and what was the impact?"></textarea>
+      </div>
+      <div class="field-group">
+        <label for="aImage">Image URL (optional)</label>
+        <input class="field" type="url" id="aImage" placeholder="https://…">
+      </div>
+      <div class="modal-actions">
+        <button type="submit" class="btn btn-primary">Add activity</button>
+        <button type="button" class="btn btn-ghost" data-close-modal>Cancel</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <strong style="color:var(--white);font-family:var(--font-display);font-size:1.05rem;">Rotaract Club of Ntinda</strong>
+        <p>Service above self — empowering young leaders in Ntinda and beyond.</p>
+        <div class="social-row">
+          <a href="#" aria-label="Facebook" title="Facebook">f</a>
+          <a href="#" aria-label="Instagram" title="Instagram">◎</a>
+          <a href="#" aria-label="X / Twitter" title="X / Twitter">✕</a>
+          <a href="#" aria-label="WhatsApp" title="WhatsApp">☏</a>
+        </div>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <a href="home.html">Home</a>
+        <a href="members.html">Members</a>
+        <a href="activities.html">Activities</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div>
+        <h4>Get involved</h4>
+        <a href="contact.html">Join the club</a>
+        <a href="activities.html">Volunteer</a>
+        <a href="contact.html">Partner with us</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year></span> Rotaract Club of Ntinda. All rights reserved.</span>
+      <span>Part of Rotary International</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/core/data.js"></script>
+<script src="assets/js/core/main.js"></script>
+<script src="assets/js/pages/activities.js"></script>
+</body>
+</html>
