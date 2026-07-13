@@ -648,3 +648,34 @@ textarea.field{resize:vertical;min-height:90px;}
 /* Utility */
 .mt-0{margin-top:0;}
 .text-center{text-align:center;}
+
+.stat-strips{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    background: var(--pink);
+    padding: 30px 20px;
+    border-radius: 12px;
+    margin-top: 30px;
+}
+
+.stat-cells{
+    flex: 1;
+    min-width: 180px;
+    text-align: center;
+    color: #fff;
+}
+
+.stat-cells strong{
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #fff;
+}
+
+.stat-cells span{
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.9);
+}
