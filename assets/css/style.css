@@ -226,9 +226,12 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
    ============================================================ */
 .hero{
   position:relative;
-  background:
+  background-image:
     linear-gradient(120deg, rgba(1,42,42,0.92) 0%, rgba(1,37,49,0.78) 55%, rgba(1,37,49,0.6) 100%),
-    url("../images/background.JPG") center/cover no-repeat;
+    url("../images/background.JPG");
+  background-position:center;
+  background-size:cover;
+  background-repeat:no-repeat;
   color:var(--white);
   overflow:hidden;
   padding:76px 0 96px;
@@ -304,6 +307,16 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
   .hero p.lede{margin-inline:auto;}
   .hero-cta{justify-content:center;}
   .stat-strip{grid-template-columns:repeat(2,1fr);}
+}
+
+@media (max-width:640px){
+  .hero{
+    background-position:center 20%;
+    padding:60px 0 72px;
+  }
+  .hero::after{
+    opacity:.9;
+  }
 }
 
 /* ============================================================
