@@ -226,7 +226,9 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
    ============================================================ */
 .hero{
   position:relative;
-  background:radial-gradient(1100px 520px at 82% -10%, var(--teal-700) 0%, var(--navy) 55%);
+  background:
+    linear-gradient(120deg, rgba(1,42,42,0.92) 0%, rgba(1,37,49,0.78) 55%, rgba(1,37,49,0.6) 100%),
+    url("../images/background.JPG") center/cover no-repeat;
   color:var(--white);
   overflow:hidden;
   padding:76px 0 96px;
